@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Rajput - Telegram Channel</title>
+
+    <!-- ======================================================= -->
+    <!-- APNA FACEBOOK PIXEL CODE YAHAN NICHE PASTE KAREIN -->
+    
+    
+    <!-- APNA FACEBOOK PIXEL CODE YAHAN UPAR PASTE KAREIN -->
+    <!-- ======================================================= -->
+
+    <style>
+        /* Base Settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa; /* Very subtle off-white to make the white card stand out */
+        }
+
+        /* Clean White Card */
+        .card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 45px 35px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06); /* Soft, professional shadow */
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Profile Image */
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0066cc;
+            padding: 3px; /* Gives a nice ring effect */
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.3); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 102, 204, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0); }
+        }
+
+        /* Name */
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Join Button */
+        .telegram-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: #0066cc; /* Professional Telegram Blue */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 16px 20px;
+            border-radius: 50px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+            margin-bottom: 35px;
+        }
+
+        .telegram-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+        }
+
+        /* Timer */
+        .timer-section {
+            margin-bottom: 30px;
+        }
+
+        .time-display {
+            font-size: 30px;
+            font-weight: 800;
+            color: #dc3545; /* Clean Red */
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-family: monospace; /* Keeps numbers perfectly aligned */
+        }
+
+        .time-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 25px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #d63384; /* Professional Pinkish tone matching the screenshot */
+            letter-spacing: 0.5px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            font-size: 11px;
+            color: #888888;
+            line-height: 1.6;
+            border-top: 1px solid #eeeeee;
+            padding-top: 20px;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 480px) {
+            .card {
+                padding: 35px 25px;
+                border-radius: 20px;
+            }
+            .time-display {
+                font-size: 26px;
+            }
+            .time-labels {
+                padding: 0 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Logo -->
+        <div class="profile-wrapper">
+            <img src="https://plain-apac-prod-public.komododecks.com/202609/21/Aj7fBY3oGdFHaNW4o0En/image.jpg" alt="Logo" class="profile-img">
+        </div>
+
+        <!-- Name -->
+        <h1>Abhishek Rajput</h1>
+
+        <!-- Button -->
+        <a href="https://t.me/+ew5yEYTGFdJiMDk1" class="telegram-btn" id="join-btn" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.5 2.5L2.5 10.5L9.5 13.5L12.5 20.5L15.5 16.5L20.5 20.5L21.5 2.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Join Free Telegram
+        </a>
+
+        <!-- Timer -->
+        <div class="timer-section">
+            <div class="time-display" id="timer-text">00 : 00 : 00 : 18</div>
+            <div class="time-labels">
+                <span>DAYS</span>
+                <span>HOURS</span>
+                <span>MINUTES</span>
+                <span>SECONDS</span>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            Disclaimer: Join this channel at your own responsibility. The advertising agency holds no liability or responsibility for any content, services, or activities hosted within the Telegram channel.
+        </div>
+    </div>
+
+    <!-- Timer Script -->
+    <script>
+        let secondsLeft = 18;
+        const timerElement = document.getElementById('timer-text');
+
+        const countdown = setInterval(() => {
+            secondsLeft--;
+            
+            if (secondsLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.innerText = "00 : 00 : 00 : 00";
+            } else {
+                // Ensure 2 digit format (e.g., 09, 08)
+                let formattedSeconds = secondsLeft < 10 ? "0" + secondsLeft : secondsLeft;
+                timerElement.innerText = "00 : 00 : 00 : " + formattedSeconds;
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
